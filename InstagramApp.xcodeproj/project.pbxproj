@@ -18,6 +18,7 @@
 		AD2B3A26276B02A300E9A6FE /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B3A25276B02A300E9A6FE /* UIButton+.swift */; };
 		AD2B3A29276B031400E9A6FE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B3A28276B031400E9A6FE /* ProfileViewController.swift */; };
 		AD2B3A2B276B077800E9A6FE /* ProfileDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B3A2A276B077800E9A6FE /* ProfileDataView.swift */; };
+		AD2B3A2D276B0D3000E9A6FE /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B3A2C276B0D3000E9A6FE /* ProfileCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		AD2B3A25276B02A300E9A6FE /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		AD2B3A28276B031400E9A6FE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AD2B3A2A276B077800E9A6FE /* ProfileDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataView.swift; sourceTree = "<group>"; };
+		AD2B3A2C276B0D3000E9A6FE /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				AD2B3A28276B031400E9A6FE /* ProfileViewController.swift */,
 				AD2B3A2A276B077800E9A6FE /* ProfileDataView.swift */,
+				AD2B3A2C276B0D3000E9A6FE /* ProfileCollectionViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD2B3A0D276AF34800E9A6FE /* FeedViewController.swift in Sources */,
+				AD2B3A2D276B0D3000E9A6FE /* ProfileCollectionViewCell.swift in Sources */,
 				AD2B3A26276B02A300E9A6FE /* UIButton+.swift in Sources */,
 				AD2B3A20276AF44C00E9A6FE /* TabBarController.swift in Sources */,
 				AD2B3A09276AF34800E9A6FE /* AppDelegate.swift in Sources */,

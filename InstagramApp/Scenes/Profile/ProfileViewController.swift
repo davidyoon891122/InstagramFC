@@ -60,6 +60,21 @@ final class ProfileViewController: UIViewController {
     private let followingDataView = ProfileDataview(title: "팔로잉", count: 1)
     
 
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        //layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 0.5
+        layout.minimumInteritemSpacing = 0.5
+        
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .systemBackground
+        collectionView.register(ProfileCollectionViewCell.self, forCellWithReuseIdentifier: "ProfileCollectionViewCell")
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        return collectionView
+        
+    }()
     
     
     override func viewDidLoad() {
@@ -72,13 +87,60 @@ final class ProfileViewController: UIViewController {
  
 }
 
+extension ProfileViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileCollectionViewCell", for: indexPath) as? ProfileCollectionViewCell
+        cell?.setup(with: UIImage())
+        return cell ?? UICollectionViewCell()
+    }
+    
+    
+}
+
+
+extension ProfileViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = (collectionView.frame.width / 3) - 1
+        return CGSize(width: width, height: width
+        )
+    }
+}
+
+
 
 private extension ProfileViewController {
     func setNavigation() {
         self.navigationItem.title = "UserName"
         
-        let rightBarButton = UIBarButtonItem(image: UIImage(systemName: "ellipsis"), style: .plain, target: self, action: nil)
+        let rightBarButton = UIBarButtonItem(image: UIImage(systemName: "ellipsis"), style: .plain, target: self, action: #selector(didTapRightBarButtonItem))
         self.navigationItem.rightBarButtonItem = rightBarButton
+        
+    }
+    
+    @objc func didTapRightBarButtonItem() {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        [
+            UIAlertAction(title: "회원정보 변경", style: .default) { response in
+                print("\(response.title)")
+            },
+            UIAlertAction(title: "탈퇴하기", style: .destructive) { response in
+                print("\(response.title)")
+            },
+            UIAlertAction(title: "닫기", style: .cancel) { response in
+                print("\(response.title)")
+            }
+        ].forEach{
+            actionSheet.addAction($0)
+        }
+        
+        self.present(actionSheet, animated: true, completion: nil)
+        
+        
     }
     
     
@@ -96,10 +158,11 @@ private extension ProfileViewController {
         
         [
             self.profileImageView,
+            buttonStackView,
             self.nameLabel,
             self.descriptionLabel,
-            buttonStackView,
-            dataStackView
+            dataStackView,
+            self.collectionView
         ].forEach{
             self.view.addSubview($0)
         }
@@ -111,6 +174,13 @@ private extension ProfileViewController {
             $0.leading.equalToSuperview().inset(inset)
             $0.width.equalTo(80)
             $0.height.equalTo(self.profileImageView.snp.width)
+        }
+        
+        dataStackView.snp.makeConstraints{
+            $0.leading.equalTo(self.profileImageView.snp.trailing).offset(inset)
+            $0.trailing.equalToSuperview().inset(inset)
+            $0.centerY.equalTo(self.profileImageView.snp.centerY)
+            
         }
         
         self.nameLabel.snp.makeConstraints{
@@ -131,11 +201,16 @@ private extension ProfileViewController {
             $0.trailing.equalTo(self.nameLabel.snp.trailing)
         }
         
-        dataStackView.snp.makeConstraints{
-            $0.leading.equalTo(self.profileImageView.snp.trailing).offset(inset)
-            $0.trailing.equalToSuperview().inset(inset)
-            $0.centerY.equalTo(self.profileImageView.snp.centerY)
-            
+        
+        
+        self.collectionView.snp.makeConstraints{
+            $0.top.equalTo(buttonStackView.snp.bottom).offset(16)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
         }
     }
+    
+    
 }
+
