@@ -3,27 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		AD2B3A09276AF34800E9A6FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B3A08276AF34800E9A6FE /* AppDelegate.swift */; };
 		AD2B3A0B276AF34800E9A6FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B3A0A276AF34800E9A6FE /* SceneDelegate.swift */; };
-		AD2B3A0D276AF34800E9A6FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B3A0C276AF34800E9A6FE /* ViewController.swift */; };
-		AD2B3A10276AF34800E9A6FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2B3A0E276AF34800E9A6FE /* Main.storyboard */; };
+		AD2B3A0D276AF34800E9A6FE /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B3A0C276AF34800E9A6FE /* FeedViewController.swift */; };
 		AD2B3A12276AF34900E9A6FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD2B3A11276AF34900E9A6FE /* Assets.xcassets */; };
 		AD2B3A15276AF34900E9A6FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2B3A13276AF34900E9A6FE /* LaunchScreen.storyboard */; };
+		AD2B3A1E276AF38600E9A6FE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AD2B3A1D276AF38600E9A6FE /* SnapKit */; };
+		AD2B3A20276AF44C00E9A6FE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B3A1F276AF44C00E9A6FE /* TabBarController.swift */; };
+		AD2B3A24276AF8F200E9A6FE /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B3A23276AF8F200E9A6FE /* FeedTableViewCell.swift */; };
+		AD2B3A26276B02A300E9A6FE /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B3A25276B02A300E9A6FE /* UIButton+.swift */; };
+		AD2B3A29276B031400E9A6FE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B3A28276B031400E9A6FE /* ProfileViewController.swift */; };
+		AD2B3A2B276B077800E9A6FE /* ProfileDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2B3A2A276B077800E9A6FE /* ProfileDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AD2B3A05276AF34800E9A6FE /* InstagramApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2B3A08276AF34800E9A6FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD2B3A0A276AF34800E9A6FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AD2B3A0C276AF34800E9A6FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AD2B3A0F276AF34800E9A6FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AD2B3A0C276AF34800E9A6FE /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		AD2B3A11276AF34900E9A6FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD2B3A14276AF34900E9A6FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD2B3A16276AF34900E9A6FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD2B3A1F276AF44C00E9A6FE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		AD2B3A23276AF8F200E9A6FE /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		AD2B3A25276B02A300E9A6FE /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		AD2B3A28276B031400E9A6FE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AD2B3A2A276B077800E9A6FE /* ProfileDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD2B3A1E276AF38600E9A6FE /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,13 +68,41 @@
 			children = (
 				AD2B3A08276AF34800E9A6FE /* AppDelegate.swift */,
 				AD2B3A0A276AF34800E9A6FE /* SceneDelegate.swift */,
-				AD2B3A0C276AF34800E9A6FE /* ViewController.swift */,
-				AD2B3A0E276AF34800E9A6FE /* Main.storyboard */,
+				AD2B3A21276AF45500E9A6FE /* Scenes */,
 				AD2B3A11276AF34900E9A6FE /* Assets.xcassets */,
 				AD2B3A13276AF34900E9A6FE /* LaunchScreen.storyboard */,
 				AD2B3A16276AF34900E9A6FE /* Info.plist */,
+				AD2B3A25276B02A300E9A6FE /* UIButton+.swift */,
 			);
 			path = InstagramApp;
+			sourceTree = "<group>";
+		};
+		AD2B3A21276AF45500E9A6FE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				AD2B3A27276B02FF00E9A6FE /* Profile */,
+				AD2B3A22276AF8E300E9A6FE /* Feed */,
+				AD2B3A1F276AF44C00E9A6FE /* TabBarController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		AD2B3A22276AF8E300E9A6FE /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				AD2B3A0C276AF34800E9A6FE /* FeedViewController.swift */,
+				AD2B3A23276AF8F200E9A6FE /* FeedTableViewCell.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		AD2B3A27276B02FF00E9A6FE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				AD2B3A28276B031400E9A6FE /* ProfileViewController.swift */,
+				AD2B3A2A276B077800E9A6FE /* ProfileDataView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +121,9 @@
 			dependencies = (
 			);
 			name = InstagramApp;
+			packageProductDependencies = (
+				AD2B3A1D276AF38600E9A6FE /* SnapKit */,
+			);
 			productName = InstagramApp;
 			productReference = AD2B3A05276AF34800E9A6FE /* InstagramApp.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +151,9 @@
 				Base,
 			);
 			mainGroup = AD2B39FC276AF34700E9A6FE;
+			packageReferences = (
+				AD2B3A1C276AF38600E9A6FE /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = AD2B3A06276AF34800E9A6FE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,7 +170,6 @@
 			files = (
 				AD2B3A15276AF34900E9A6FE /* LaunchScreen.storyboard in Resources */,
 				AD2B3A12276AF34900E9A6FE /* Assets.xcassets in Resources */,
-				AD2B3A10276AF34800E9A6FE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +180,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD2B3A0D276AF34800E9A6FE /* ViewController.swift in Sources */,
+				AD2B3A0D276AF34800E9A6FE /* FeedViewController.swift in Sources */,
+				AD2B3A26276B02A300E9A6FE /* UIButton+.swift in Sources */,
+				AD2B3A20276AF44C00E9A6FE /* TabBarController.swift in Sources */,
 				AD2B3A09276AF34800E9A6FE /* AppDelegate.swift in Sources */,
+				AD2B3A29276B031400E9A6FE /* ProfileViewController.swift in Sources */,
 				AD2B3A0B276AF34800E9A6FE /* SceneDelegate.swift in Sources */,
+				AD2B3A2B276B077800E9A6FE /* ProfileDataView.swift in Sources */,
+				AD2B3A24276AF8F200E9A6FE /* FeedTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AD2B3A0E276AF34800E9A6FE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AD2B3A0F276AF34800E9A6FE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AD2B3A13276AF34900E9A6FE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -341,6 +381,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD2B3A1C276AF38600E9A6FE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD2B3A1D276AF38600E9A6FE /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD2B3A1C276AF38600E9A6FE /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AD2B39FD276AF34700E9A6FE /* Project object */;
 }
