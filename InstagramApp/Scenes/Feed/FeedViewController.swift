@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class FeedViewController: UIViewController {
+final class FeedViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.backgroundColor = .systemBackground
@@ -66,7 +66,7 @@ extension FeedViewController: UIImagePickerControllerDelegate & UINavigationCont
 
 extension FeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

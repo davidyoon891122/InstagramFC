@@ -87,6 +87,8 @@ final class FeedTableViewCell: UITableViewCell {
         
         let buttonWidth: CGFloat = 24.0
         let buttonInset: CGFloat = 16.0
+        let buttonOffset: CGFloat = 12.0
+        let labelOffset: CGFloat = 8.0
         
         self.likeButton.snp.makeConstraints{
             $0.leading.equalToSuperview().inset(buttonInset)
@@ -96,14 +98,14 @@ final class FeedTableViewCell: UITableViewCell {
         }
         
         self.commentButton.snp.makeConstraints{
-            $0.leading.equalTo(self.likeButton.snp.trailing).offset(12.0)
+            $0.leading.equalTo(self.likeButton.snp.trailing).offset(buttonOffset)
             $0.top.equalTo(self.likeButton.snp.top)
             $0.width.equalTo(buttonWidth)
             $0.height.equalTo(buttonWidth)
         }
         
         self.directMessageButton.snp.makeConstraints{
-            $0.leading.equalTo(self.commentButton.snp.trailing).offset(12.0)
+            $0.leading.equalTo(self.commentButton.snp.trailing).offset(buttonOffset)
             $0.top.equalTo(self.commentButton.snp.top)
             $0.width.equalTo(buttonWidth)
             $0.height.equalTo(buttonWidth)
@@ -125,13 +127,13 @@ final class FeedTableViewCell: UITableViewCell {
         self.contentsLabel.snp.makeConstraints{
             $0.leading.equalTo(self.likeButton.snp.leading)
             $0.trailing.equalTo(self.bookMarkButton.snp.trailing)
-            $0.top.equalTo(self.currentLikedCountLabel.snp.bottom).offset(8)
+            $0.top.equalTo(self.currentLikedCountLabel.snp.bottom).offset(labelOffset)
         }
         
         self.dateLabel.snp.makeConstraints{
             $0.leading.equalTo(self.likeButton.snp.leading)
             $0.trailing.equalTo(self.bookMarkButton.snp.trailing)
-            $0.top.equalTo(self.contentsLabel.snp.bottom).offset(8)
+            $0.top.equalTo(self.contentsLabel.snp.bottom).offset(labelOffset)
             $0.bottom.equalToSuperview().inset(16)
         }
         
