@@ -19,6 +19,15 @@ class FeedViewController: UIViewController {
         return tableView
     }()
     
+    private lazy var imagePickerViewController: UIImagePickerController = {
+        let imagePickerViewController = UIImagePickerController()
+        imagePickerViewController.sourceType = .photoLibrary
+        imagePickerViewController.allowsEditing = true
+        imagePickerViewController.delegate = self
+        return imagePickerViewController
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavigation()
@@ -27,22 +36,30 @@ class FeedViewController: UIViewController {
     }
     
 
-
 }
 
 
-private extension FeedViewController {
-    func setNavigation() {
-        self.navigationItem.title = "Instagram"
-        let uploadButton = UIBarButtonItem(image: UIImage(systemName: "plus.app"), style: .plain, target: self, action: nil)
-        self.navigationItem.rightBarButtonItem = uploadButton
-    }
-    
-    func setTableView() {
-        self.view.addSubview(self.tableView)
-        self.tableView.snp.makeConstraints{
-            $0.edges.equalToSuperview()
+extension FeedViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        var selectImage: UIImage?
+        
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            selectImage = editedImage
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            selectImage = originalImage
         }
+        
+        self.imagePickerViewController.dismiss(animated: true) { [weak self] in
+            guard let self = self else { return
+                
+            }
+            let navigationController = UINavigationController(rootViewController: UploadViewController())
+            navigationController.modalPresentationStyle = .fullScreen
+            self.present(navigationController, animated: true, completion: nil)
+            
+        }
+        
+        
     }
 }
 
@@ -59,3 +76,26 @@ extension FeedViewController: UITableViewDataSource {
     
     
 }
+
+private extension FeedViewController {
+    func setNavigation() {
+        self.navigationItem.title = "Instagram"
+        let uploadButton = UIBarButtonItem(image: UIImage(systemName: "plus.app"), style: .plain, target: self, action: #selector(didTapUploadButton))
+        self.navigationItem.rightBarButtonItem = uploadButton
+        
+        
+    }
+    
+    @objc func didTapUploadButton() {
+        present(self.imagePickerViewController, animated: true, completion: nil)
+    }
+    
+    func setTableView() {
+        self.view.addSubview(self.tableView)
+        self.tableView.snp.makeConstraints{
+            $0.edges.equalToSuperview()
+        }
+    }
+}
+
+
